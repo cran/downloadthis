@@ -1,0 +1,17 @@
+2045aecf410e98c7d6e82e310960b7f2 *DESCRIPTION
+5bbf7c8b04c723eefb19093c14672f7c *LICENSE
+da3b775a2b424e664772758172c822c3 *NAMESPACE
+a0a804de98be25c4bc8552aa36f8824b *NEWS.md
+3aec945e2bc9c25457b45194830a7f1e *R/download.R
+e0ef681901465d24f47f9139cb2c086a *R/downloadthis-package.R
+65cef5e0674056f6fc07dd2b3ca85c13 *R/utils-pipe.R
+295658529fca2a3529cec16065f5913c *README.md
+0ab09b38fa1ed812f3bd4eab333ad969 *build/vignette.rds
+afef422fdf2c112dab0edda16289330f *inst/doc/downloadthis.R
+3d9848015961f09f2e89132909579c63 *inst/doc/downloadthis.Rmd
+33df4d5af23ab5809bca470fe7975968 *inst/doc/downloadthis.html
+464cbec3c78629efb733883cdf4b0033 *man/download_this.Rd
+06b5b9133ebfc4ad12e40f061a6f8fb4 *man/downloadthis-package.Rd
+38e2afe05898f517bc87d94d31c0df55 *man/figures/logo.png
+4894ca10756199e25f914bfd34f517b0 *man/pipe.Rd
+3d9848015961f09f2e89132909579c63 *vignettes/downloadthis.Rmd
