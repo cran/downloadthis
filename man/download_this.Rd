@@ -16,11 +16,11 @@ download_this(
 )
 }
 \arguments{
-\item{.data}{A data frame to write to disk.}
+\item{.data}{A data frame or (named) list to write to disk. See 'Examples' for more details.}
 
 \item{output_name}{Name of of the output file.}
 
-\item{output_extension}{Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported.}
+\item{output_extension}{Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported. If a (named) list is passed to the function, only \code{.xlsx} is supported.}
 
 \item{button_label}{character (HTML), button label}
 
@@ -46,9 +46,32 @@ This example will write the `mtcars` dataset to `tempdir()` and produce the down
 }
 
 \examples{
+# Passing a data frame to the function
 mtcars \%>\%
   download_this(
     output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+
+# Passing a list with data frames to the function
+list(mtcars, iris) \%>\%
+  download_this(
+    output_name = "mtcars and iris datasets",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+
+# Passing a named list with data frames to the function
+list('mtcars dataset' = mtcars, 'iris dataset' = iris) \%>\%
+  download_this(
+    output_name = "mtcars and iris datasets",
     output_extension = ".csv",
     button_label = "Download data",
     button_type = "warning",
