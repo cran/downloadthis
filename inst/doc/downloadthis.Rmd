@@ -16,9 +16,19 @@ knitr::opts_chunk$set(
 
 This package provides a wrapper around `bsplus::bs_button()`, which has to goal to provide a download button in HTML outputs from R Markdown without the need to have `runtime: shiny`.
 
+```{block, type = 'rmdinfo'}
+Currently, the download buttons functionality (embedded files) is not supported in Internet Explorer.
+
+Please, refer to the [Customizing buttons with css vignette](customization.html) for tips on how to customize the buttons.
+```
+
+<br>
+
 You can easily produce a download button as follows:
 
-## Passing a data frame to the function
+## Data frames
+
+### Passing a data frame to the function
 
 ```{r}
 library(downloadthis)
@@ -34,7 +44,9 @@ mtcars %>%
   )
 ```
 
-## Passing a list with data frames to the function (only `.xlsx` supported)
+## Lists
+
+### Passing a list with data frames to the function (only `.xlsx` supported)
 
 ```{r}
 list(mtcars, iris) %>%
@@ -48,7 +60,7 @@ list(mtcars, iris) %>%
   )
 ```
 
-## Passing a named list with data frames to the function (only `.xlsx` supported)
+### Passing a named list with data frames to the function (only `.xlsx` supported)
 
 ```{r}
 list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
@@ -57,92 +69,6 @@ list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
     output_extension = ".xlsx",
     button_label = "Download datasets as xlsx",
     button_type = "warning",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
-```
-
-## Button types
-
-### Default
-
-```{r example_1}
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".csv",
-    button_label = "Download data as csv",
-    button_type = "default",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
-```
-
-### Primary
-
-```{r example_2}
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".xlsx",
-    button_label = "Download data as xlsx",
-    button_type = "primary",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
-```
-
-### Success
-
-```{r example_3}
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".csv",
-    button_label = "Download data as csv",
-    button_type = "success",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
-```
-
-### Info
-
-```{r example_4}
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".xlsx",
-    button_label = "Download data as xlsx",
-    button_type = "info",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
-```
-
-### Warning
-
-```{r example_5}
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".csv",
-    button_label = "Download data as csv",
-    button_type = "warning",
-    has_icon = TRUE,
-    icon = "fa fa-save"
-  )
-```
-
-### Danger
-
-```{r example_6}
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".xlsx",
-    button_label = "Download data as xlsx",
-    button_type = "danger",
     has_icon = TRUE,
     icon = "fa fa-save"
   )

@@ -1,6 +1,6 @@
 Package: downloadthis
 Title: Implement Download Buttons in 'rmarkdown'
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Felipe",
            family = "Mattioni Maturana",
@@ -15,13 +15,13 @@ Encoding: UTF-8
 LazyData: true
 Imports: fs, readr, writexl, bsplus, mime, htmltools, base64enc,
         magrittr, rmarkdown, purrr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Suggests: knitr
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-03-05 08:49:26 UTC; fmattioni
+Packaged: 2020-03-30 13:46:31 UTC; fmattioni
 Author: Felipe Mattioni Maturana [aut, cre]
     (<https://orcid.org/0000-0002-4221-6104>)
 Maintainer: Felipe Mattioni Maturana <felipe.mattioni@med.uni-tuebingen.de>
 Repository: CRAN
-Date/Publication: 2020-03-05 09:00:02 UTC
+Date/Publication: 2020-03-30 14:10:02 UTC
