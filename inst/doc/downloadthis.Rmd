@@ -44,9 +44,9 @@ mtcars %>%
   )
 ```
 
-## Lists
+## Lists (only `.xlsx` and `.rds` are supported)
 
-### Passing a list with data frames to the function (only `.xlsx` supported)
+### Passing a list with data frames to the function 
 
 ```{r}
 list(mtcars, iris) %>%
@@ -60,7 +60,7 @@ list(mtcars, iris) %>%
   )
 ```
 
-### Passing a named list with data frames to the function (only `.xlsx` supported)
+### Passing a named list with data frames to the function
 
 ```{r}
 list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
@@ -72,4 +72,83 @@ list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
     has_icon = TRUE,
     icon = "fa fa-save"
   )
+```
+
+## R Objects
+
+In case you want to make any R object available for download, you may use the `.rds` extension.
+
+```{r}
+vector_example <- 1:10
+linear_model <- lm(mpg ~ gear, data = mtcars)
+
+list(mtcars, iris, vector_example, linear_model) %>%
+  download_this(
+    output_name = "datasets, vector, and linear model",
+    output_extension = ".rds",
+    button_label = "Download as rds",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+## Web address
+
+```{r}
+## Link in Github repo
+download_link(
+  link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
+  button_label = "Download pdf file",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+## Local files
+
+### Single file
+
+```{r}
+download_file(
+  path = system.file("assets/css/all.min.css", package = "downloadthis"),
+  output_name = "CSS file from downloadthis",
+  button_label = "Download css file",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+### Multiple files
+
+```{r}
+path_files <- list.files(path = system.file("assets/css", package = "downloadthis"), full.names = TRUE)
+
+download_file(
+  path = path_files,
+  output_name = "Files from downloadthis",
+  button_label = "Download files",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+## Local directory
+
+```{r}
+download_dir(
+  path = system.file("assets", package = "downloadthis"),
+  output_name = "example dir",
+  button_label = "Download directory",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
 ```

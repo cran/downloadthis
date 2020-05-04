@@ -2,16 +2,17 @@
 % Please edit documentation in R/download.R
 \name{download_this}
 \alias{download_this}
-\title{Download button}
+\title{Download data frames, lists, or any R object}
 \usage{
 download_this(
   .data,
   output_name,
-  output_extension = c(".csv", ".xlsx"),
+  output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
   has_icon = TRUE,
   icon = "fa fa-save",
+  self_contained = FALSE,
   ...
 )
 }
@@ -20,32 +21,36 @@ download_this(
 
 \item{output_name}{Name of of the output file.}
 
-\item{output_extension}{Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported. If a (named) list is passed to the function, only \code{.xlsx} is supported.}
+\item{output_extension}{Extension of the output file. Currently,  \code{.csv},  \code{.xlsx}, and \code{.rds} are supported. If a (named) list is passed to the function, only \code{.xlsx} and \code{.rds} are supported.}
 
-\item{button_label}{character (HTML), button label}
+\item{button_label}{Character (HTML), button label}
 
-\item{button_type}{character, one of the standard Bootstrap types}
+\item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{has_icon}{specify whether to include fontawesome icons in the button label}
+\item{has_icon}{Specify whether to include fontawesome icons in the button label}
 
-\item{icon}{fontawesome tag e.g.: "fa fa-save"}
+\item{icon}{Fontawesome tag e.g.: "fa fa-save"}
+
+\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
+of the button, passed to \code{htmltools::tag()}.}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
+\code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
 Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML outputs in R Markdown.
 Internally, the function writes the file to \code{tempdir()}, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
+For downloading links, files, or directories, see \code{download_link()}, \code{download_file()}, and \code{download_dir()}.
 }
 \section{Warning}{
 
-This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file \verb{mtcars dataset.csv} with the \verb{fa fa-save} icon on the \verb{Download data} label.
 }
 
 \examples{
+\dontrun{
 # Passing a data frame to the function
 mtcars \%>\%
   download_this(
@@ -61,7 +66,7 @@ mtcars \%>\%
 list(mtcars, iris) \%>\%
   download_this(
     output_name = "mtcars and iris datasets",
-    output_extension = ".csv",
+    output_extension = ".xlsx",
     button_label = "Download data",
     button_type = "warning",
     has_icon = TRUE,
@@ -72,10 +77,25 @@ list(mtcars, iris) \%>\%
 list('mtcars dataset' = mtcars, 'iris dataset' = iris) \%>\%
   download_this(
     output_name = "mtcars and iris datasets",
-    output_extension = ".csv",
+    output_extension = ".xlsx",
     button_label = "Download data",
     button_type = "warning",
     has_icon = TRUE,
     icon = "fa fa-save"
   )
+
+# Passing any R object to the function
+vector_example <- 1:10
+linear_model <- lm(mpg ~ gear, data = mtcars)
+
+list(mtcars, iris, vector_example, linear_model) \%>\%
+ download_this(
+   output_name = "datasets, vector, and linear model",
+   output_extension = ".rds",
+   button_label = "Download as rds",
+   button_type = "warning",
+   has_icon = TRUE,
+   icon = "fa fa-save"
+ )
+}
 }
