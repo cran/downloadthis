@@ -99,3 +99,14 @@ download_dir(
   self_contained = FALSE
 )
 
+## -----------------------------------------------------------------------------
+library(ggplot2)
+
+plot <- ggplot(cars, aes(speed, dist)) +
+  geom_point()
+
+plot
+
+## -----------------------------------------------------------------------------
+download_this(plot)
+
