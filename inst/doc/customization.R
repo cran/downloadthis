@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
 ## -----------------------------------------------------------------------------
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -21,7 +21,7 @@ mtcars %>%
 ## -----------------------------------------------------------------------------
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -35,7 +35,7 @@ mtcars %>%
 ## -----------------------------------------------------------------------------
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",

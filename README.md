@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN
 status](https://www.r-pkg.org/badges/version-ago/downloadthis)](https://CRAN.R-project.org/package=downloadthis)
 [![R build
@@ -15,6 +15,9 @@ status](https://github.com/fmmattioni/downloadthis/workflows/R-CMD-check/badge.s
 badge](https://cranlogs.r-pkg.org/badges/last-month/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
 [![Total downloads
 badge](https://cranlogs.r-pkg.org/badges/grand-total/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
+[![Codecov test
+coverage](https://codecov.io/gh/fmmattioni/downloadthis/branch/master/graph/badge.svg)](https://app.codecov.io/gh/fmmattioni/downloadthis?branch=master)
+[![R-CMD-check](https://github.com/fmmattioni/downloadthis/workflows/R-CMD-check/badge.svg)](https://github.com/fmmattioni/downloadthis/actions)
 <!-- badges: end -->
 
 The goal of `downloadthis` is to implement download buttons in HTML
@@ -54,7 +57,7 @@ v.5.13.0](https://fontawesome.com/)
 ``` r
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars data set",
     output_extension = ".csv",
@@ -126,16 +129,16 @@ download_dir(
 
 ## Vignettes
 
-  - [Introduction to
+-   [Introduction to
     downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
-  - [Button
+-   [Button
     types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
-  - [Customizing buttons with
+-   [Customizing buttons with
     css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
 
 ## Related work
 
-  - [xfun](https://github.com/yihui/xfun): The `xfun` package provides
+-   [xfun](https://github.com/yihui/xfun): The `xfun` package provides
     links instead of buttons for local files and directories.
 
 ## Code of Conduct
