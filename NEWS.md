@@ -1,3 +1,14 @@
+# downloadthis 0.4.0
+
+* Switched `base64enc` dependency for `b64`.
+* Improved download function.
+* Updated fontawesome icons to v.6.5.2.
+
+# downloadthis 0.3.4
+
+* Fixed issue that download button with icons were messing button in plotly (#29).
+* Updated fontawesome icons to v.6.4.2.
+
 # downloadthis 0.3.3
 
 * Fixed issue that download button in Quarto documents were not working in Firefox (#33).
