@@ -1,6 +1,6 @@
 Package: downloadthis
 Title: Implement Download Buttons in 'rmarkdown'
-Version: 0.4.1
+Version: 0.5.0
 Authors@R: 
     c(
         person(given = "Felipe",
@@ -19,18 +19,18 @@ URL: https://github.com/fmmattioni/downloadthis
 BugReports: https://github.com/fmmattioni/downloadthis/issues
 Encoding: UTF-8
 Imports: fs, readr, writexl, bsplus, mime, htmltools, magrittr, zip,
-        ggplot2, b64
-RoxygenNote: 7.3.0
+        ggplot2, base64enc
+RoxygenNote: 7.3.2
 Suggests: knitr, rmarkdown, testthat (>= 3.0.1), spelling, covr
 VignetteBuilder: knitr
 Language: en-US
 Config/testthat/edition: 3
 Config/testthat/parallel: true
 NeedsCompilation: no
-Packaged: 2024-10-14 15:21:38 UTC; fmattioni
-Author: Felipe Mattioni Maturana [aut, cre]
-    (<https://orcid.org/0000-0002-4221-6104>),
+Packaged: 2025-07-11 13:53:57 UTC; fmattioni
+Author: Felipe Mattioni Maturana [aut, cre] (ORCID:
+    <https://orcid.org/0000-0002-4221-6104>),
   John Coene [ctb]
 Maintainer: Felipe Mattioni Maturana <felipe.mattioni@med.uni-tuebingen.de>
 Repository: CRAN
-Date/Publication: 2024-10-14 15:40:02 UTC
+Date/Publication: 2025-07-11 14:10:08 UTC
